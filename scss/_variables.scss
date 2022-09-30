@@ -1,0 +1,87 @@
+$primary: #1B49EF;
+$secondary: #1F50FC;
+$tertiary: #040C25;
+$quartinary: #152761;
+$white: #ffffff;
+$black: #000000;
+$dark: #252E3A;
+$light: #F1F6F8;
+$grey: #E0E0E0;
+
+$theme-colors: (
+    ) !default;
+$theme-colors: map-merge(("primary": $primary,
+            "secondary": $secondary,
+            "tertiary": $tertiary,
+            "quartinary": $quartinary,
+            "white": $white,
+            "black": $black,
+            "dark": $dark,
+            "grey": $grey,
+            "light": $light ),
+        $theme-colors
+);
+
+$font-sizes: (
+    1:6rem,
+    // 96px
+    2:4.875rem,
+    // 78px
+    3:3.625rem,
+    // 58px
+    4:3.375rem,
+    // 54px
+    5:1.6875rem,
+    // 27px
+    6:1.625rem,
+    // 26px
+    7:1.5rem,
+    // 24px
+    8:1.25rem,
+    // 20px
+    9:1.125rem,
+    // 18px,
+    10: 0.875rem,
+);
+
+// Grid Breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1440px,
+    xxl: 1748px,
+    ) !default;
+// Container sizing
+$container-max-widths: (
+    sm: 540px,
+    md: 740px,
+    lg: 1280px,
+    xl: 1442px,
+    xxl: 1579px,
+    ) !default;
+
+
+$spacer: 1rem !default;
+$spacers: (
+    ) !default;
+$spacers: map-merge((0: 0,
+            1: $spacer * 0.25,
+            2: $spacer * 0.5,
+            3: $spacer,
+            4: $spacer * 1.5,
+            5: $spacer * 3,
+            6: $spacer * 4,
+            7: $spacer * 5,
+            8: $spacer * 6,
+            9: $spacer * 7,
+            10: $spacer * 10,
+            11: $spacer * 11,
+            12: $spacer * 12,
+            13: $spacer * 13,
+            14: $spacer * 14,
+            15: $spacer * 15,
+        ),
+        $spacers
+);
