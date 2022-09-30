@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
     $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-    $recaptcha_secret = '6Ldf65UaAAAAAIZXB13zuC2NGW2wYh-zGATTd7-J';
+    $recaptcha_secret = '6Lee0qYgAAAAACDJ_0PC2bZEcn3cNMH2Tq6-oui5';
     $recaptcha_response = $_POST['token'];
     $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
     $recaptcha = json_decode($recaptcha);
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
             throw new Exception('Low Score');
         }
 
-        $site = "Aayush Rijal";
+        $site = "Brisbane Laser Cutting";
         $to = 'arijal@aiims.com.au';
 
         $subject = "Message from " . $site;
@@ -19,15 +19,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
         $name = $_POST['name'];
         $phone = $_POST['phone'];
         $email = $_POST['email'];
-        $suburb = $_POST['suburb'];
         $service = $_POST['service'];
+        $comment = $_POST['comment'];
 
         $message = '<!DOCTYPE html><html><body>' .
             'Name: <strong>' . strip_tags($name) . '</strong><br>' .
             'Phone: <strong>' . strip_tags($phone) . '</strong><br>' .
             'Email Address: <strong>' . strip_tags($email) . '</strong><br>' .
-            'Suburb: <strong>' . strip_tags($suburb) . '</strong><br>' .
-            'Service: <strong>' . strip_tags($service) . '</strong><br>';
+            'Service: <strong>' . strip_tags($service) . '</strong><br>'.
+            'Message: <strong>' . strip_tags($comment) . '</strong><br>' ;
 
         $headers = "MIME-Version: 1.0\r\n" .
             "Content-type: text/html; charset=utf-8\r\n" .
