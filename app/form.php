@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
         }
 
         $site = "Brisbane Laser Cutting";
-        $to = 'arijal@aiims.com.au';
+        $to = 'arijal@aiims.com.au'; //jayoub@aiims.com.au 
 
         $subject = "Message from " . $site;
 

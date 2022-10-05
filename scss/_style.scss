@@ -24,6 +24,42 @@ header {
                 font-size: 0.875rem;
             }
         }
+
+        .hamburger-menu {
+            position: absolute;
+            right: 10px;
+            top: 50px;
+            min-width: 240px;
+            background: $white;
+            border-radius: 3px;
+            border: 1px solid $grey;
+            display: none;
+            padding: 10px 0;
+            
+            ul {
+                padding-inline-start: 0;
+                margin-bottom: 0;
+                
+                li {
+                    list-style: none;
+                    border-bottom: 1px solid $grey;
+                    
+                    a {
+                        font-weight: 600;
+                        font-family: $font-articulat;
+                        text-decoration: none;
+                        font-size: 0.875rem;
+                        line-height: 3;
+                        padding: 0 16px;
+                        color: $black;
+                    }
+
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
     }
 
     .banner {
@@ -122,7 +158,7 @@ section.form {
     }
 }
 
-section.cta {
+section.about {
     background: #040c25 imgUrl('cta-banner.png') right center;
     background-size: contain;
     padding: 62px 0 72px;
