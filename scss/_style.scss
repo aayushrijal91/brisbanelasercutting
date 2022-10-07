@@ -2,6 +2,81 @@
 @return url("../images/" + $path + "/" + $file) no-repeat;
 }
 
+.menu {
+    background: $primary;
+    height: 100%;
+    position: fixed;
+    z-index: 10000;
+    transition: 0.3s all ease-in-out;
+    width: 50%;
+    transform: translateX(200%);
+    padding: 64px 48px;
+
+    @include media-breakpoint-down(xl) {
+        width: 72%;
+        transform: translateX(140%);
+        padding: 48px 0;
+    }
+
+    @include media-breakpoint-down(lg) {
+        width: 100%;
+        transform: translateX(100%);
+        padding: 48px 0;
+    }
+
+    &.active {
+        transform: translateX(100%);
+
+        @include media-breakpoint-down(xl) {
+            transform: translateX(40%);
+        }
+        @include media-breakpoint-down(lg) {
+            transform: translateX(0);
+        }
+    }
+
+    .hamburger-menu {
+        padding: 64px 0 48px;
+
+        ul {
+            padding-inline-start: 0;
+            margin-bottom: 0;
+
+            li {
+                list-style: none;
+                padding: 0px 16px;
+
+                a {
+                    font-weight: 600;
+                    font-family: $font-articulat;
+                    text-decoration: none;
+                    font-size: 1.625rem;
+                    line-height: 2;
+                    color: $white;
+                    position: relative;
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 1.125rem;
+                    }
+
+                    .arrow {
+                        position: absolute;
+                        right: 0;
+                        top: -13px;
+                        opacity: 0;
+                        transition: 0.2s all ease-in-out;
+                    }
+
+                    &:hover .arrow {
+                        right: -48px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
 header {
     .header-top-bar {
         background-color: $white;
@@ -35,15 +110,15 @@ header {
             border: 1px solid $grey;
             display: none;
             padding: 10px 0;
-            
+
             ul {
                 padding-inline-start: 0;
                 margin-bottom: 0;
-                
+
                 li {
                     list-style: none;
                     border-bottom: 1px solid $grey;
-                    
+
                     a {
                         font-weight: 600;
                         font-family: $font-articulat;

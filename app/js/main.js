@@ -42,11 +42,15 @@ $(".accordion-head").on('click', function () {
 });
 
 $('#hamburger-menu-btn').on('click', function() {
-    $('.hamburger-menu').slideToggle();
+    $('.menu').toggleClass('active');
 });
 
 $('.hamburger-menu ul li a').on('click', function() {
-    $('.hamburger-menu').slideToggle();
+    $('.menu').toggleClass('active');
+});
+
+$('#close-slidemenu').on('click', function() {
+    $('.menu').toggleClass('active');
 });
 
 $(window).on('scroll', () => {
